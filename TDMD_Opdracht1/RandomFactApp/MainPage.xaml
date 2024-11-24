@@ -24,7 +24,7 @@
 
             <Label
                 x:Name="Fact"
-                Text="{Binding factToShow}"
+                Text="{Binding FactToShow}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="No fact generated yet!" />
 
@@ -32,7 +32,7 @@
                 x:Name="GenerateFactButton"
                 Text="Generate fact" 
                 SemanticProperties.Hint="Counts the number of times you click"
-                Command="{Binding GetNewRandomFact}"
+                Command="{Binding GetNewRandomFactCommand}"
                 HorizontalOptions="Fill" />
 
             <RadioButton

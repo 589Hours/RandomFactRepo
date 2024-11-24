@@ -20,7 +20,7 @@ namespace RandomFactApp
 
             builder.Services.AddHttpClient<IRandomFactClient, UselessFactApiClient>(o =>
             {
-                o.BaseAddress = new Uri("https://uselessfacts.jsph.pl/api/v2/facts/random");
+                o.BaseAddress = new Uri("https://uselessfacts.jsph.pl/api/v2/");
                 o.Timeout = TimeSpan.FromSeconds(3);
             });
 

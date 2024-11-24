@@ -21,8 +21,8 @@ namespace RandomFactApp.Infrastructure.UselessFactApi
 
         public async Task<RandomFact> RetrieveRandomFactAsync(string language)
         {
-            string finalUrl = $"&language={language}";
-            HttpResponseMessage response = await httpClient.GetAsync(language);
+            string randomFactBit = $"facts/random?language={language}";
+            HttpResponseMessage response = await httpClient.GetAsync(randomFactBit);
             response.EnsureSuccessStatusCode();
 
             string jsonString = await response.Content.ReadAsStringAsync();
@@ -40,7 +40,7 @@ namespace RandomFactApp.Infrastructure.UselessFactApi
                 return factElement.GetString();
             }
 
-            return "";
+            return "We run out of facts today!";
         }
     }
 }

@@ -24,8 +24,16 @@ namespace RandomFactApp.ViewModels
         [RelayCommand]
         public async Task GetNewRandomFact()
         {
-            var receivedFact = await this.randomFactClient.RetrieveRandomFactAsync("en");
-            this.factToShow = receivedFact!.Fact;
+            try
+            {
+                var receivedFact = await this.randomFactClient.RetrieveRandomFactAsync("en");
+                this.FactToShow = receivedFact!.Fact;
+            }
+            catch (Exception ex)
+            {
+                this.FactToShow = "something went wrong";
+            }
+
 
         }
     }
